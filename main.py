@@ -5,8 +5,11 @@ import pygame
 
 from constants import *
 
+
 def main():
     pygame.init()
+    fps_clock = pygame.time.Clock()
+    dt = 0
     print("Starting asteroids!")
     print("Screen width:", SCREEN_WIDTH)
     print("Screen height:", SCREEN_HEIGHT)
@@ -17,6 +20,8 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
+        delta_time = fps_clock.tick(60)
+        dt = delta_time/1000
 
 if __name__ == "__main__":
     main()
